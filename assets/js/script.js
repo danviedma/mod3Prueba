@@ -1,15 +1,22 @@
 async function getMoney() {
-    try{
-        const res = await fetch('https://mindicador.cl/api/');
+    try {
+        const res = await fetch('https://mindicador.cl/api/');  // URL incorrecta para simular el error
+        if (!res.ok) {
+            throw new Error('Error al obtener los datos, respuesta HTTP no válida');
+        }
         const data = await res.json();
         return data;
-
-    }catch(error){
-        console.log(error);
+    } catch (error) {
+        const errorMessage = document.querySelector('#errorMessage');
+        errorMessage.innerHTML = 'Hubo un error al obtener los datos. Intenta nuevamente más tarde.';
+        console.log(errorMessage.innerHTML);
+        errorMessage.style.color = 'red'; 
+        errorMessage.style.display = 'block';
+        return null; 
     }
-
-   
 }
+
+
 
 const btnConvertir = document.querySelector('#btnConvertir');
 
@@ -17,6 +24,11 @@ let chartInstance = null; // Variable global para guardar la instancia del gráf
 
 btnConvertir.addEventListener('click', async () => {
     const data = await getMoney();
+
+    if (!data) {
+        return;  
+    }
+
     const inputPesos = document.querySelector('#pesos');
     const selectMoneda = document.querySelector('#moneda');
     const resultado = document.querySelector('#resultado');
