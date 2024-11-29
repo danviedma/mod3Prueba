@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: gray;
+}
+
+h1, h3{
+    font-size: 2.5rem;
+    font-weight: 100;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+#select-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 4rem;
+    align-items: center;
+    text-align: center;
+    background-color: lightgray;
+    color: white;
+    padding: 20px;
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+}
+
+input, select, button{
+    margin-top: 1rem;
+    padding: 10px;
+    width: 50%;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 100;
+}
+
+p{
+    font-size: 1rem;
+    font-weight: 100;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#myChart{
+    width: 70%;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background-color: lightgray;
+    display: none;
+}
